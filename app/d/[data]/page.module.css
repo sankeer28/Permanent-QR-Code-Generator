@@ -1,0 +1,137 @@
+/**
+ * Preview Page Styles
+ * Error states and main layout
+ */
+
+.main {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+/* ========================================
+   ERROR CONTAINER
+   ======================================== */
+
+.errorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: var(--space-3); /* 24px */
+  background: var(--bg-primary);
+}
+
+.errorCard {
+  background: var(--bg-card);
+  border: 2px solid var(--error);
+  border-radius: 12px;
+  padding: var(--space-6); /* 48px */
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3); /* 24px */
+  text-align: center;
+}
+
+.errorTitle {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semibold);
+  color: var(--error);
+  margin: 0;
+  line-height: 32px;
+}
+
+.errorText {
+  font-size: var(--font-size-body);
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 24px;
+}
+
+/* ========================================
+   DETAILS (EXPANDABLE)
+   ======================================== */
+
+.details {
+  text-align: left;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: var(--space-2); /* 16px */
+  margin-top: var(--space-2); /* 16px */
+}
+
+.details summary {
+  cursor: pointer;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  padding: var(--space-1); /* 8px */
+  user-select: none;
+}
+
+.details summary:hover {
+  color: var(--text-primary);
+}
+
+.detailsText {
+  font-size: var(--font-size-small);
+  color: var(--text-secondary);
+  margin: var(--space-2) 0 0 0; /* 16px top */
+  padding: var(--space-1); /* 8px */
+  word-break: break-all;
+  font-family: monospace;
+  background: var(--bg-card);
+  border-radius: 4px;
+  line-height: 20px;
+}
+
+/* ========================================
+   HOME LINK
+   ======================================== */
+
+.homeLink {
+  display: inline-block;
+  height: var(--space-6); /* 48px */
+  padding: 0 var(--space-4); /* 32px horizontal */
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: 2px solid var(--button-bg);
+  border-radius: 8px;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: var(--space-6); /* Center text vertically */
+  text-align: center;
+}
+
+.homeLink:hover {
+  background: var(--button-hover);
+  border-color: var(--button-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(168, 196, 160, 0.2);
+}
+
+.homeLink:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(168, 196, 160, 0.2);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 640px) {
+  .errorCard {
+    padding: var(--space-4); /* 32px on mobile */
+  }
+
+  .errorTitle {
+    font-size: var(--font-size-h3);
+    line-height: 28px;
+  }
+}

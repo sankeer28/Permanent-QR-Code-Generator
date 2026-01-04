@@ -1,0 +1,67 @@
+/**
+ * URL Input Styles
+ * 48px height input with focus states
+ */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1); /* 8px between label and input */
+  width: 100%;
+}
+
+.label {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  line-height: 20px; /* aligned to 8px grid */
+}
+
+.input {
+  height: var(--space-6); /* 48px */
+  width: 100%;
+  padding: 0 var(--space-2); /* 16px horizontal padding */
+  background: var(--bg-card);
+  border: 2px solid var(--border-default);
+  border-radius: 8px;
+  font-size: var(--font-size-body);
+  color: var(--text-primary);
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* Focus state */
+.input:focus {
+  border-color: var(--input-focus);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(168, 196, 160, 0.1);
+}
+
+/* Error state */
+.inputError {
+  border-color: var(--error);
+}
+
+.inputError:focus {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px rgba(232, 160, 160, 0.1);
+}
+
+/* Disabled state */
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--bg-primary);
+}
+
+/* Error message */
+.error {
+  font-size: var(--font-size-small);
+  color: var(--error);
+  line-height: 20px; /* aligned to 8px grid */
+  margin-top: var(--space-1); /* 8px */
+}

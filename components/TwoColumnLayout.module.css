@@ -1,0 +1,70 @@
+/**
+ * Two-Column Layout Styles
+ * 12-column grid with 5-5 split (2 col gap between)
+ * Container uses 10 columns centered (1 col margin each side)
+ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max); /* 1200px */
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-3); /* 32px top/bottom, 24px left/right */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--column-gap); /* 24px */
+  width: 100%;
+}
+
+/* Left column: 5 columns starting at column 2 (1 col margin) */
+.leftColumn {
+  grid-column: 2 / 7;
+}
+
+/* Right column: 5 columns starting at column 8 (leaving 2 col gap) */
+.rightColumn {
+  grid-column: 8 / 13;
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Tablet: Maintain 2-column but reduce margins */
+@media (max-width: 1023px) {
+  .container {
+    padding: var(--space-3) var(--space-2); /* 24px top/bottom, 16px left/right */
+  }
+
+  /* Use full width with smaller margins */
+  .leftColumn {
+    grid-column: 1 / 7;
+  }
+
+  .rightColumn {
+    grid-column: 7 / 13;
+  }
+
+  .grid {
+    gap: var(--space-2); /* 16px */
+  }
+}
+
+/* Mobile: Single column stack */
+@media (max-width: 767px) {
+  .container {
+    padding: var(--space-3) var(--space-2); /* 24px top/bottom, 16px left/right */
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4); /* 32px between stacked sections */
+  }
+
+  .leftColumn,
+  .rightColumn {
+    grid-column: 1 / -1; /* Full width */
+  }
+}

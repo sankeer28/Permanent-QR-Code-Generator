@@ -1,0 +1,183 @@
+/* Permanent QR Code Generator - Design System */
+
+:root {
+  /* ========================================
+     COLORS - Soft Pastel Palette
+     ======================================== */
+
+  /* Backgrounds */
+  --bg-primary: #F8F9FA;      /* Light warm gray page background */
+  --bg-card: #FFFFFF;         /* White cards/containers */
+
+  /* Text */
+  --text-primary: #2C3E50;    /* Dark blue-gray headings/body */
+  --text-secondary: #5D6D7E;  /* Medium gray secondary text */
+  --text-tertiary: #95A5A6;   /* Light gray hints/labels */
+
+  /* Accents */
+  --accent-sage: #A8C4A0;     /* Soft sage green - PRIMARY */
+  --accent-lavender: #B4A7D6; /* Soft lavender */
+  --accent-peach: #E8B4A0;    /* Soft peach - for warnings */
+  --accent-sky: #A0C4E8;      /* Soft sky blue */
+
+  /* UI Elements */
+  --border-light: #E8EAED;    /* Very light borders */
+  --border-default: #D4D9DD;  /* Default borders */
+  --border-dark: #B0B8C0;     /* Emphasized borders */
+
+  /* Interactive States */
+  --button-bg: #A8C4A0;       /* Sage green primary button */
+  --button-hover: #95B28D;    /* Darker sage on hover */
+  --button-text: #2C3E50;     /* Dark text on light button */
+  --input-focus: #A8C4A0;     /* Sage border on focus */
+
+  /* Feedback */
+  --success: #A8C4A0;         /* Sage for success */
+  --warning: #E8B4A0;         /* Peach for warnings */
+  --error: #E8A0A0;           /* Soft red for errors */
+
+  /* ========================================
+     SPACING - 8px Grid System
+     All spacing MUST be multiples of 8px
+     ======================================== */
+
+  --space-1: 8px;    /* Tiny gaps */
+  --space-2: 16px;   /* Small gaps */
+  --space-3: 24px;   /* Standard gaps */
+  --space-4: 32px;   /* Section spacing */
+  --space-5: 40px;
+  --space-6: 48px;   /* Component height */
+  --space-8: 64px;   /* Large section gaps */
+  --space-10: 80px;  /* Page sections */
+
+  /* ========================================
+     TYPOGRAPHY
+     All line heights aligned to 8px grid
+     ======================================== */
+
+  /* Font Sizes */
+  --font-size-h1: 32px;    /* line-height: 40px */
+  --font-size-h2: 24px;    /* line-height: 32px */
+  --font-size-h3: 20px;    /* line-height: 28px */
+  --font-size-body: 16px;  /* line-height: 24px */
+  --font-size-small: 14px; /* line-height: 20px */
+  --font-size-tiny: 12px;  /* line-height: 16px */
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* ========================================
+     BREAKPOINTS
+     ======================================== */
+
+  --mobile: 640px;
+  --tablet: 768px;
+  --desktop: 1024px;
+  --wide: 1200px;
+
+  /* ========================================
+     LAYOUT
+     ======================================== */
+
+  --container-max: 1200px;
+  --column-gap: 24px;  /* 3 units */
+  --grid-columns: 12;
+}
+
+/* ========================================
+   GLOBAL RESETS
+   ======================================== */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+               'Helvetica Neue', Arial, sans-serif;
+  font-size: var(--font-size-body);
+  line-height: 24px; /* 1.5 ratio, aligned to 8px grid */
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  font-weight: var(--font-weight-regular);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   TYPOGRAPHY STYLES
+   ======================================== */
+
+h1 {
+  font-size: var(--font-size-h1);
+  line-height: 40px; /* aligned to 8px grid */
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  line-height: 32px; /* aligned to 8px grid */
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  line-height: 28px; /* aligned to 8px grid - using 28px instead of 24px for better readability */
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+p {
+  font-size: var(--font-size-body);
+  line-height: 24px;
+  color: var(--text-primary);
+}
+
+small {
+  font-size: var(--font-size-small);
+  line-height: 20px; /* aligned to 8px grid - using 20px */
+  color: var(--text-secondary);
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+/* Focus visible styles for keyboard navigation */
+*:focus-visible {
+  outline: 3px solid var(--input-focus);
+  outline-offset: 2px;
+}
+
+/* Remove default focus outline, we'll use focus-visible instead */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
